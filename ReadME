@@ -1,0 +1,60 @@
+EcoMarket SPA
+EcoMarket SPA es una aplicación Android desarrollada en Kotlin como proyecto académico.
+La app simula un pequeño marketplace donde un usuario puede registrarse, iniciar sesión y ver productos desde una API externa.
+
+El objetivo principal fue aplicar lo aprendido en clases, como navegación entre pantallas, consumo de API y manejo básico de estado en la aplicación.
+
+---
+
+Funcionalidades
+Registro e inicio de sesión
+Listado y detalle de productos
+Carrito de compras
+Checkout con pago simulado
+Perfil de usuario y cierre de sesión
+
+---
+
+Tecnologías
+Android Studio
+Kotlin
+Jetpack Compose
+Retrofit
+
+
+├── app/
+│   ├── build.gradle.kts              # Script de configuración del módulo app
+│   ├── proguard-rules.pro
+│   └── src/main/
+│       ├── AndroidManifest.xml       # Permisos de Internet y configuración de la app
+│       ├── java/com/example/ecomarketspa/
+│       │   ├── MainActivity.kt       # Activity principal que aloja la navegación
+│       │   ├── data/
+│       │   │   ├── local/
+│       │   │   │   ├── SessionManager.kt # Gestión de token y carrito con DataStore
+│       │   │   │   ├── dao/ (Clases DAO vacías - Placeholder para Room)
+│       │   │   │   └── entities/ (Clases Entity vacías - Placeholder para Room)
+│       │   │   ├── model/ (Clases Model vacías)
+│       │   │   ├── remote/
+│       │   │   │   ├── api/ (EcoMarketApi.kt - Interfaz Retrofit)
+│       │   │   │   └── dto/ (Data Transfer Objects para API, e.g., AuthResponse.kt)
+│       │   │   └── repository/ (AuthRepository.kt, OrderRepository.kt, ProductRepository.kt)
+│       │   ├── navigation/ (AppNavigation.kt - Grafo de navegación)
+│       │   ├── ui/
+│       │   │   ├── components/ (ErrorView.kt, LoadingView.kt, ProductItemCard.kt)
+│       │   │   ├── screens/ (auth/, cart/, checkout/, home/, order/, payment/, product/, profile/, splashscreen/)
+│       │   │   └── theme/ (Color.kt, Theme.kt, Type.kt)
+│       │   ├── utils/ (Constants.kt - Contiene BASE_URL y KEY_AUTH_TOKEN)
+│       │   └── viewmodel/ (CartViewModel.kt, CheckoutViewModel.kt, HomeViewModel.kt, LoginViewModel.kt, ...)
+│       └── res/
+│           ├── drawable/
+│           ├── mipmap-XXXXdpi/
+│           ├── values/ (colors.xml, strings.xml, themes.xml)
+│           └── xml/ (file_paths.xml, backup_rules.xml, data_extraction_rules.xml)
+├── build.gradle.kt                 # Script de configuración de la raíz (simple)
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── settings.gradle.kts
+└── gradle/
+    └── wrapper/
